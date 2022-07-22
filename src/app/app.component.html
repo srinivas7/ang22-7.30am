@@ -1,0 +1,28 @@
+from app component
+Name from app component {{name}}
+<app-first [name]="name" [title]="title"></app-first>
+
+<!-- response is...{{data | json}} -->
+
+<button (click)="getData()">Get Todo Activities</button>
+<!-- <div *ngFor="let activity of data">
+    id - {{activity.id}}
+    userId - - {{activity.userId}}
+    title - {{activity.title}}
+    completed - {{activity.completed}}
+</div> -->
+
+<table>
+    <thead>
+        <th>id</th>
+        <th>userId</th>
+        <th>title</th>
+        <th>status</th>
+    </thead>
+    <tr *ngFor="let activity of data">
+        <td>{{activity.id}}</td>
+        <td>{{activity.userId}}</td>
+        <td>{{activity.title}}</td>
+        <td>{{activity.completed}}</td>
+    </tr>
+</table>
