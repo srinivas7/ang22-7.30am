@@ -12,4 +12,14 @@ export class TestService {
   fetchProductsInfo() {
     return this.http.get('https://jsonplaceholder.typicode.com/todos');
   }
+
+  getData() {
+    let data = {
+      "userId": 1,
+      "id": 1,
+      "title": "sample data",
+      "body": "test body"
+    };
+    return this.http.post('https://jsonplaceholder.typicode.com/posts', data);
+  }
 }

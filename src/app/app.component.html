@@ -21,8 +21,12 @@ Name from app component {{name}}
     </thead>
     <tr *ngFor="let activity of data">
         <td>{{activity.id}}</td>
-        <td>{{activity.userId}}</td>
+        
+        <td *ngIf="activity.userId == 1">ONE</td>
+        <td *ngIf="activity.userId != 1">{{activity.userId}}</td>
         <td>{{activity.title}}</td>
         <td>{{activity.completed}}</td>
     </tr>
 </table>
+
+<button (click)="postData()">POst call</button>

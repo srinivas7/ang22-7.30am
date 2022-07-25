@@ -19,5 +19,12 @@ export class AppComponent {
       this.data = res;
     });
   }
+
+
+  postData() {
+    this.service.getData().subscribe((res) => {
+      console.log(res);
+    })
+  }
   
 }
