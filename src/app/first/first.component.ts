@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-first',
@@ -9,7 +10,11 @@ export class FirstComponent implements OnInit {
   @Input() name: any;
   @Input() title: any;
   city = 'hyd';
-  constructor() {
+  obj = {
+    name: 'abc',
+    city: 'hyd'
+  }
+  constructor(private service: TestService) {
     console.log('from constructor');
   }
   ngOnInit(): void {
@@ -21,8 +26,8 @@ export class FirstComponent implements OnInit {
     this.city = 'hyd';
   }
 
-  method1(obj:any) {
-    console.log('event triggered from child component', obj);
+  method1() {
+    this.service.setData(this.obj);
   }
 
 }

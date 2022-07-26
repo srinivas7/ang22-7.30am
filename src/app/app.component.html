@@ -2,6 +2,8 @@ from app component
 Name from app component {{name}}
 <app-first [name]="name" [title]="title"></app-first>
 
+<app-child #childComp></app-child>
+
 <!-- response is...{{data | json}} -->
 
 <button (click)="getData()">Get Todo Activities</button>
@@ -12,6 +14,7 @@ Name from app component {{name}}
     completed - {{activity.completed}}
 </div> -->
 
+<app-login></app-login>
 <table>
     <thead>
         <th>id</th>

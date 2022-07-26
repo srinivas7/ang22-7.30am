@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChildComponent } from './child/child.component';
 import { TestService } from './test.service';
 
 @Component({
@@ -10,14 +11,17 @@ export class AppComponent {
   title = 'sample';
   name='test';
   data: any;
+  @ViewChild('childComp') childComp: any;
   constructor(private service: TestService) {}
   
   getData() {
     let info = '';
-    this.service.fetchProductsInfo().subscribe((res) => {
-      console.log('todo activities...', res);
-      this.data = res;
-    });
+    this.childComp.method1();
+    console.log('child comp is...', this.childComp.address, this.childComp.hello );
+    // this.service.fetchProductsInfo().subscribe((res) => {
+    //   console.log('todo activities...', res);
+    //   this.data = res;
+    // });
   }
 
 
